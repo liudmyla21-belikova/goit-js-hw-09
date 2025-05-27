@@ -1,21 +1,37 @@
 .gallery {
-    list-style: none;
-    display: flex;
-    flex-wrap: wrap;
-    gap: 24px;
-    margin: 0 auto;
-    padding: 0;
-    max-width: 1128px;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+  margin: 0 auto;
+  padding: 0;
+  max-width: 1128px;
 }
 
-.gallery-item {
-    flex-basis: calc((100% - 48px) / 3);
-    transition: transform 0.4s;
+.list-item {
+  flex-basis: calc((100% - 48px) / 3);
+  transition: transform 0.4s;
+}
+
+.list-item:hover {
+  transform: scale(1.04, 1.13);
 }
 
 .gallery-image {
-    width: 100%;
-    display: block;
-    object-fit: cover;
-    height: 200px;
+  width: 100%;
+  display: block;
+  object-fit: cover;
+  height: 200px;
+}
+
+.back-link {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #6c8cff;
 }

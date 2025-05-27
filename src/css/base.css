@@ -16,12 +16,17 @@
   -webkit-text-size-adjust: 100%;
 }
 
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
 body {
   display: flex;
   flex-direction: column;
   min-width: 100vw;
   min-height: 100vh;
-  margin: 0;
 }
 
 main {
@@ -29,4 +34,24 @@ main {
 }
 main:has(.back-link) {
   text-align: center;
+}
+
+.list {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  list-style: none;
+  padding: 0;
+}
+
+.list-item-base {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 1.33;
+  letter-spacing: 0.04em;
+  color: #6c8cff;
+  margin: 5px 0;
 }

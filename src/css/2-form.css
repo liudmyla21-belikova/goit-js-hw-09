@@ -1,19 +1,63 @@
-.badges-list {
+.feedback-form {
+  margin: 120px auto;
   display: flex;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: center;
-  gap: 32px;
+  flex-direction: column;
+  gap: 8px;
+  width: 360px;
+  background-color: #fff;
 }
-.badges-link {
-  display: block;
-  padding: 8px 16px;
-  border: 1px solid;
+
+.label {
+  display: flex;
+  flex-direction: column;
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 400;
+  font-size: 20px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #2e2f42;
+  gap: 8px;
+}
+
+.input {
+  width: 360px;
+  height: 40px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  padding: 8px 12px;
+}
+
+.textarea {
+  padding: 8px 12px;
+  border: 1px solid #808080;
+  border-radius: 4px;
+  resize: none;
+}
+
+.btn {
+  font-family: 'Montserrat', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.5;
+  letter-spacing: 0.04em;
+  color: #fff;
+  margin-top: 16px;
   border-radius: 8px;
-  transition: 200ms ease-in;
+  padding: 8px 16px;
+  width: 86px;
+  height: 40px;
+  background-color: #4e75ff;
+  border: none;
+  cursor: pointer;
+  transition: cubic-bezier(0.175, 0.885, 0.32, 1.275);
 }
-.badges-link:hover,
-.badges-link:focus {
-  transform: scale(1.06);
-  color: #747bff;
+
+.input:hover,
+.input:focus {
+  border: 1px solid #000;
+}
+
+.btn:hover,
+.btn:focus {
+  background-color: #6c8cff;
 }
