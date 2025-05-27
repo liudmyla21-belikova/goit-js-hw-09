@@ -7,20 +7,27 @@ let formData = {
 
 const form = document.querySelector('.feedback-form');
 
-const savedData = localStorage.getItem(storageKey);
-if (savedData) {
-  formData = JSON.parse(savedData);
-  form.elements.email.value = formData.email;
-  form.elements.message.value = formData.message;
-}
-
 form.addEventListener('input', handleInput);
-form.addEventListener('submit', handleSubmit);
 
 function handleInput(event) {
-  formData[event.target.name] = event.target.value.trim();
+  formData[event.target.name] = event.target.value;
   localStorage.setItem(storageKey, JSON.stringify(formData));
+  console.log('Saved to localStorage:', formData);
 }
+
+const savedData = localStorage.getItem(storageKey);
+if (savedData) {
+  const parseData = JSON.parse(savedData);
+  formData = parseData;
+  if (parseData.email) {
+    form.elements.email.value = parseData.email;
+  }
+  if (parseData.message) {
+    form.elements.message.value = parseData.message;
+  }
+}
+
+form.addEventListener('submit', handleSubmit);
 
 function handleSubmit(event) {
   event.preventDefault();
@@ -29,11 +36,9 @@ function handleSubmit(event) {
     alert('Fill please all fields');
     return;
   }
-
   console.log(formData);
-
-  event.currentTarget.reset();
   localStorage.removeItem(storageKey);
-  formData.email = '';
-  formData.message = '';
+  formData = { email: '', message: '' };
+
+  form.reset();
 }
